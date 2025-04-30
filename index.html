@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     
+    </style>
+  </head>
+  <body>
+<div class="container-titulo">
+   
+    <h1>Júlia Emanuelle</h1>
+    <marquee behavior="" direction="">13 Anos</marquee>
+    <h2>Feliz Aniversário</h2>
+   
+    
+    <marquee behavior="" direction="">06 setembro 2023</marquee>
+</div>
+
+    <!-- Carousel Automático -->
+    <div class="carousel-container">
+      <div class="carousel" id="autoCarousel">
+        <img src="DSC08777.JPG" alt="Foto 1" />
+        <img src="DSC08778.JPG" alt="Foto 2" />
+        <img src="DSC08779.JPG" alt="Foto 3" />
+        <img src="DSC08780.JPG" alt="Foto 4" />
+        <img src="DSC08781.JPG" alt="Foto 5" />
+        <img src="DSC08782.JPG" alt="Foto 6" />
+        <img src="DSC08784.JPG" alt="Foto 7" />
+        <img src="DSC08785.JPG" alt="Foto 8" />
+        <img src="DSC08786.JPG" alt="Foto 9" />
+        <img src="DSC08797.JPG" alt="Foto 10" />
+        <img src="DSC08815.JPG" alt="Foto 11" />
+        <img src="DSC08816.JPG" alt="Foto 12" />
+        <img src="DSC08813.JPG" alt="Foto 13" />
+
+      </div>
+    </div>
+
+    <!-- Carousel Manual -->
+    <div class="carousel-container">
+      <div class="carousel" id="manualCarousel">
+        <img src="DSC08777.JPG" alt="Foto 1" />
+        <img src="DSC08778.JPG" alt="Foto 2" />
+        <img src="DSC08779.JPG" alt="Foto 3" />
+        <img src="DSC08780.JPG" alt="Foto 4" />
+        <img src="DSC08781.JPG" alt="Foto 5" />
+        <img src="DSC08782.JPG" alt="Foto 6" />
+        <img src="DSC08784.JPG" alt="Foto 7" />
+        <img src="DSC08785.JPG" alt="Foto 8" />
+        <img src="DSC08786.JPG" alt="Foto 9" />
+        <img src="DSC08797.JPG" alt="Foto 10" />
+        <img src="DSC08815.JPG" alt="Foto 11" />
+        <img src="DSC08816.JPG" alt="Foto 12" />
+        <img src="DSC08813.JPG" alt="Foto 13" />
+      </div>
+      <div class="buttons">
+        <button onclick="prevSlide()">Anterior</button>
+        <button onclick="nextSlide()">Próximo</button>
+      </div>
+    </div>
+
+    <script>
+      // Carousel Automático
+      const autoCarousel = document.getElementById("autoCarousel");
+      let autoIndex = 0;
+
+      setInterval(() => {
+        autoIndex = (autoIndex + 1) % 13; // Ajuste para 4 imagens
+        autoCarousel.style.transform = `translateX(-${autoIndex * 100}%)`;
+      }, 3000); // Troca a cada 3 segundos
+
+      // Carousel Manual
+      const manualCarousel = document.getElementById("manualCarousel");
+      let manualIndex = 0;
+
+      function updateManualCarousel() {
+        manualCarousel.style.transform = `translateX(-${manualIndex * 100}%)`;
+      }
+
+      function prevSlide() {
+        manualIndex = (manualIndex - 1 + 13) % 13; // Ajuste para 4 imagens
+        updateManualCarousel();
+      }
+
+      function nextSlide() {
+        manualIndex = (manualIndex + 1) % 13; // Ajuste para 4 imagens
+        updateManualCarousel();
+      }
+    </script>
+  </body>
+</html>
